@@ -113,6 +113,13 @@ $(document).ready(function(){
         popUP = function(name){
             return jQuery.extend({name : name}, popUP_object);
         }
+
+        // Function to call any popUP
+        // !!! NO OVERLAY SUPPORT YET!
+        showpopUP = function(name){
+            $('.popUP-container').hide(); // At first hide any other visible popUP
+            $('.' + name).show();
+        }
     
     // Call user settings the last!
     customSettings();
