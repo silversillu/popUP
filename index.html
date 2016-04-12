@@ -2,10 +2,12 @@
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script src="my-popup.js"></script>
+    <script src="mypopUP.js"></script>
     <script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
     <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="syntaxhighlighter/scripts/shBrushPlain.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="themes/default.css" rel="stylesheet" type="text/css" />
     <link href="syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
     <link href="syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
 </head>
@@ -13,43 +15,28 @@
         <div class="wrapper">
             <h1>Easy to use and customize popUP</h1>
             <section class="getting-started">
+                <h2 class="section-heading">Installing</h2>
+                <p>Here will be installation information...</p>
                 <h2 class="section-heading">Getting started</h2>
+                <p>To get started all we need is define a new popUP by adding 'popUP' attribute with a target element's ID as a value.</p>
+                <pre class="brush: plain">
+                    <a popUP="#my-content">Click here!</a>
+                    <p id="my-content" hidden>I am a really simple plain HTML</p>
+                </pre>
+                <a popUP="#my-content">Click here!</a>
+                <p id="my-content" hidden>I am a really simple plain HTML</p>
+                <h2 class="section-heading">Works well with images</h2>
+                <pre class="brush: plain">
+                    <img src="assets/img-1-small.jpg" popUP="#my-image">
+                    <img src='assets/img-1.jpg' id="my-image" hidden>
+                </pre>
+                <img src="assets/img-1-small.jpg" popUP="#my-image">
+                <img src='assets/img-1.jpg' id="my-image" hidden>
+            </section>
 
-                <p>To get started all we need is define a new popUP, ours is called "basic"</p>
-                <pre class="brush: js">
-                basic = popUP('basic');
-                </pre>
-                <p>If we do not want to change any settings, all we need to do next is to call the popUP, in our case "basic"</p>
-                <pre class="brush: js">
-                    basic.add();
-                </pre>
-                <p>To activate our new popUP, just add a class "popUP_activator" to any element you wish!</p>
-                <a class="basic_activator">Activate "basic"</a>
-                <p>You can name your popUPs whatever you like. The variable is only used to create and modify the popUP. The argument that you give to the <strong>popUP()</strong> function will be the name of your popUP and is also used for <strong>activating</strong> and <strong>hiding</strong> the popUP!</p>
-                <p>To <strong>activate</strong> your popUP your trigger must have a class "name_activator" ("name" being the name you added into the <strong>popUP()</strong> function).</p>
-                
-                <h2>Content:</h2>
-                <p>While defining a new popUP, you would probably want to add some content to your popUP.</p>
-                <p>Here we define a new popUP with content</p>
-                <pre class="brush: js">
-                    example1 = popUP('example1');
-                    example1.content = 
-                        "<h1>Hello I am a custom popUP window!</h1>"+
-                        "<h3>You can add any HTML code in me!</h3>";
-                    example1.add();
-                </pre>
-                <a class="example1_activator">Activate "example1"</a>
-                <p>Content could also be an element from page, for example the following paragraph that has a class "element-from-page":</p>
-                <p class="element-from-page"><i>"I will be in a popUP"</i></p>
-                <pre class="brush: js">
-                    example2 = popUP('example2');
-                    example2.content = $('.element-from-page');
-                    example2.add();
-                </pre>
-                <a class="example2_activator">Activate "example2"</a>
-
+            <section class="getting-started">
                 <h2>Settings:</h2>
-                <p>While defining a new popUP, there are a few things that you would like to change.</p>
+                <p>While defining a new popUP, there are a few things that you can change:</p>
                 <table class="options-table">
                     <thead>
                       <tr>
@@ -108,36 +95,12 @@
                     </tbody>
                   </table>
                 <p>Here is we define a new popUP with some custom settings</p>
-                <pre class="brush: js">
-                    example3 = popUP('example3');
-                    example3.content = 
-                        "<h1>Hello I am a styled popUP window!</h1>"+
-                        "<h3><span class='red'>I</span>"+
-                        "<span class='yellow'> am</span>"+
-                        "<span class='green'> so</span>"+
-                        "<span class='blue'> cool</span></h3>";
-                    example3.customStyles = 
-                        ".red {color: #DB4437}"+
-                        ".yellow {color: #F4B400}"+
-                        ".green {color: #0F9D58}"+
-                        ".blue {color: #4285F4}"+
-                        ".example3.popUP-container {background: #FDF0F0}";
-                    example3.add();
+                <pre class="brush: plain">
                 </pre>
                 <a class="example3_activator">Activate "example3"</a>
             </section>
             <section class="getting-started">
                 <h2 class="section-heading">Demos</h2>
-                <h2>Image with overlay</h2>
-                <p>To create a beautiful popUP with image just add your < img> tag into the content. You can also add overlay and optional click anywhere to hide.</p>
-                <pre class="brush: js">
-                    example4 = popUP('example4');
-                    example4.content = "<img src='assets/img-1.jpg'>";
-                    example4.overlay = true;
-                    example4.clickAnywhereClose = true;
-                    example4.add();
-                </pre>
-                <a class="example4_activator"><img src="assets/img-1-small.jpg"</a>
             </section>
         </div>
     <script type="text/javascript">
